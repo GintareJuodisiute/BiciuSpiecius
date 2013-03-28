@@ -7,6 +7,7 @@ b=10;
 n=2;% dimensija(matavimas)
 k=1000; % tasku (vektoriu) skaicius
 x=a + (b-a).*rand(k,n);% Sugeneruoja dvimacius vektorius
+f=[];
 for i=1:k % kad butu tiksliau galima ivesti daugiau tasku
   f(i)=sincos2(x(i,:));
 end
