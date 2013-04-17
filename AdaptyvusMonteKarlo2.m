@@ -63,7 +63,6 @@ scatter(xMin2(1),xMin2(2),'r+');
 text(xMin2(1) + 0.3,xMin2(2),num2str(fMin2));
 rectangle('Position',[a2,a3,2.0,2.0],... % Cia 2.0, 2.0 tai yra nurodomas kvardrato dydis
     'LineWidth',3,'LineStyle','--')
-%grafikas2;
  
 %{
 %Kitaip gali buti pateiktas,kai fiksuojama puse kvardrato krastines
@@ -109,5 +108,4 @@ scatter(xMin2(1),xMin2(2),'r+');
 text(xMin2(1) + 0.3,xMin2(2),num2str(fMin2));
 rectangle('Position',[a2,a3,puseKrastines*2,puseKrastines*2],...
     'LineWidth',3,'LineStyle','--')
-%grafikas2;
 %}
