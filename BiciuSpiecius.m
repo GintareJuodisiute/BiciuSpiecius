@@ -2,7 +2,7 @@ function [f1_min,x1_min] = BiciuSpiecius(funkcija,a1,b1)
 % Monte Carlo (Particle Swarm) motodo realizacija
   %a1=-10;
   %b1=10;
-  % vykdant komanda rasom (tik keiciam funkcija):[f1_min,x1_min] = BiciuSpiecius(branin,-10,10)
+  % vykdant komanda rasom (tik keiciam funkcija):[f1_min,x1_min] = BiciuSpiecius(@branin,-10,10)
   n=2;% dimensija(matavimas)
   k1=60; % tasku (vektoriu) skaicius
   x1=a1 + (b1-a1).*rand(k1,n);% Sugeneruoja dvimacius vektorius
@@ -32,19 +32,16 @@ function [f1_min,x1_min] = BiciuSpiecius(funkcija,a1,b1)
   rectangle('Position',[-10.0,-10.0,20.0,20.0],...
     'LineWidth',5,'LineStyle','--')
 % PRASIDEDA KLONAVIMAS
-% Mazas pvz., 
- %{
-     x1_naujas = (x1_sort_10(1,:) + x1_sort_10(2,:))/2;
+% Mazas pvz., "suleisiu" 1 taska su 2
+
+   for i=1:9
+      for j=i+1:10    
+     x1_naujas = (x1_sort_10(i,:) + x1_sort_10(j,:))/2;
      f1_naujas = funkcija(x1_naujas(1,:))
      %nubreziu nauja taska
-     scatter(x1_naujas(1,1),x1_naujas(1,2),'g*');
+     scatter(x1_naujas(1,1),x1_naujas(1,2),'g*'); 
      text(x1_naujas(1,1) + 0.3,x1_naujas(1,2),num2str(f1_naujas));
-   %}
-    for i=1:10
-     x1_naujas = (x1_sort_10(i,:) + x1_sort_10(i,:))/2;
+      end
+   end
+
     
-     f1_naujas = funkcija(x1_naujas(i,:))
-     %nubreziu nauja taska
-     scatter(x1_naujas(1,i),x1_naujas(1,i),'g*');
-     text(x1_naujas(1,i) + 0.3,x1_naujas(1,i),num2str(f1_naujas));
-     end
