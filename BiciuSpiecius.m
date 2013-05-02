@@ -33,14 +33,20 @@ function [f1_min,x1_min] = BiciuSpiecius(funkcija,a1,b1)
     'LineWidth',5,'LineStyle','--')
 % PRASIDEDA KLONAVIMAS
 % Mazas pvz., "suleisiu" 1 taska su 2
-
+m=0;
    for i=1:9
-      for j=i+1:10    
+      for j=i+1:10 
+          m=m+1;
      x1_naujas = (x1_sort_10(i,:) + x1_sort_10(j,:))/2;
      f1_naujas = funkcija(x1_naujas(1,:))
+           if f1_naujas < f1_min
+              f1_min = f1_naujas;
+           end
      %nubreziu nauja taska
      scatter(x1_naujas(1,1),x1_naujas(1,2),'g*'); 
-     text(x1_naujas(1,1) + 0.3,x1_naujas(1,2),num2str(f1_naujas));
+          if mod(m,5)==1
+            text(x1_naujas(1,1) + 0.3,x1_naujas(1,2),num2str(m));
+          end
       end
    end
 
