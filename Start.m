@@ -18,6 +18,5 @@ function [fmin,xmin] =  MultiStart(funkcija,a,b)
       %fminvisi=[fminvisi;fmin];
       %unique
       
-      
       %[xmin,fmin] =fminbnd(@branin,x0,x1);
     end  
